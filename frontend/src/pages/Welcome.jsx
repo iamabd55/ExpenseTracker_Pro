@@ -1,6 +1,6 @@
 import React from "react";
 import logo from "../assets/logo.svg";
-import TextAnimatedGradient from "../fonts/textAnimated";
+import TextAnimatedGradient from "../fonts/textAnimatedGradient";
 import Button from "../components/Button";
 import Button2 from "../components/Button2";
 import Features from "../components/Features";
