@@ -26,7 +26,7 @@ const ResetPassword = () => {
     try {
       const API = import.meta.env.VITE_API_URL;
       const { data } = await axios.post(
-        "{API}/api/users/resetpw",
+        `{API}/api/users/resetpw`,
         form,
         { headers: { "Content-Type": "application/json" } }
       );
@@ -145,4 +145,5 @@ const ResetPassword = () => {
 };
 
 export default ResetPassword;
+
 
