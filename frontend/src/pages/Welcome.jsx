@@ -1,6 +1,6 @@
 import React from "react";
 import logo from "../assets/logo.svg";
-import TextAnimatedGradient from "../components/textAnimatedGradient";
+import TextAnimatedGradient from "../components/TextAnimatedGradient";
 import Button from "../components/Button";
 import Button2 from "../components/Button2";
 import Features from "../components/Features";
@@ -52,4 +52,5 @@ const Welcome = () => {
 };
 
 export default Welcome;
+
 
