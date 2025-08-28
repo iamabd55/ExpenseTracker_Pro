@@ -20,7 +20,7 @@ const Login = () => {
     try {
       const API = import.meta.env.VITE_API_URL;
       const { data } = await axios.post(
-        "${API}/api/users/login",
+        `${API}/api/users/login`,
         form,
         { headers: { "Content-Type": "application/json" } }
       );
@@ -144,4 +144,5 @@ const Login = () => {
 };
 
 export default Login;
+
 
