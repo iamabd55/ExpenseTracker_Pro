@@ -25,7 +25,7 @@ const Register = () => {
     try {
       const API = import.meta.env.VITE_API_URL;
       const { data } = await axios.post(
-        "${API}/api/users/register",
+        `${API}/api/users/register`,
         form,
         { headers: { "Content-Type": "application/json" } }
       );
@@ -173,4 +173,5 @@ const Register = () => {
 };
 
 export default Register;
+
 
