@@ -1,4 +1,4 @@
-import "./Text.css";
+import "../fonts/Text.css";
 
 const TextAnimatedGradient = ({ text }) => {
   return (
