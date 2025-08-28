@@ -17,8 +17,9 @@ const ForgotPassword = () => {
     setMessage("");
 
     try {
+      const API = import.meta.env.VITE_API_URL;
       const { data } = await axios.post(
-        "http://localhost:5000/api/users/forgotpw",
+        "${API}/api/users/forgotpw",
         { email },
         { headers: { "Content-Type": "application/json" } }
       );
@@ -105,3 +106,4 @@ const ForgotPassword = () => {
 };
 
 export default ForgotPassword;
+
