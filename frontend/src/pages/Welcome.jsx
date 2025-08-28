@@ -1,7 +1,7 @@
 import React from "react";
 import logo from "../assets/logo.svg";
-import TextAnimatedGradient from "../fonts/textAnimatedGradient";
-import Button from "../components/Button";
+import TextAnimatedGradient from "../fonts/textAnimatedGradient.jsx";
+import Button from "../components/Button.jsx";
 import Button2 from "../components/Button2";
 import Features from "../components/Features";
 import Footer from "../components/Footer";
@@ -52,3 +52,4 @@ const Welcome = () => {
 };
 
 export default Welcome;
+
