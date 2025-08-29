@@ -6,8 +6,8 @@ export const emailManager = async (to, text, subject) => {
     host: "smtp-relay.brevo.com",
     port: 587, // use 587 for TLS (recommended), 465 if SSL
     auth: {
-      user: process.env.email, // usually your Brevo login email
-      pass: process.env.password      // Brevo SMTP key from dashboard
+      user: process.env.EMAIL_USER, // usually your Brevo login email
+      pass: process.env.EMAIL_PASS      // Brevo SMTP key from dashboard
     },
   });
 
@@ -20,3 +20,4 @@ export const emailManager = async (to, text, subject) => {
     html: `<p>${text}</p>`,
   });
 };
+
