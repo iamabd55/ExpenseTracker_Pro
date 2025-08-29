@@ -225,7 +225,7 @@ const Dashboard = () => {
           </p>
         ) : (
           <ul className="space-y-3">
-            {filteredTransactions.map((t) => (
+            {[...filteredTransactions].sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)).map((t) => (
               <li
                 key={t._id}
                 className="flex justify-between items-center bg-white/50 dark:bg-black/40 backdrop-blur-md 
@@ -242,7 +242,8 @@ const Dashboard = () => {
                     size={24}
                   />
                   <div>
-                    <p className="font-medium text-gray-800 dark:text-gray-200">
+                    <p className="font-medium text-gray-800 dark:text-gray-200 
+     text-sm sm:text-base line-clamp-1 break-words">
                       {t.description ?? t.remarks}
                     </p>
                     <p className="text-xs text-gray-500 dark:text-gray-400">
@@ -394,6 +395,7 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
+
 
 
 
