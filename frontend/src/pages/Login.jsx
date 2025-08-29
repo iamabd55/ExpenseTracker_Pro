@@ -20,7 +20,7 @@ const Login = () => {
     try {
       const API = import.meta.env.VITE_API_URL;
       const { data } = await axios.post(
-        "http://localhost:5000/api/users/login",
+        `${API}/api/users/login`,
         form,
         { headers: { "Content-Type": "application/json" } }
       );
