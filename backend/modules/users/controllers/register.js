@@ -45,16 +45,16 @@ export const register = expressAsyncHandler(async (req, res) => {
   // Generate JWT
   const accessToken = jwtManager(createdUser);
 
- try {
-  await emailManager(
-    createdUser.email,
-    "Welcome to Expense Tracker PRO!",
-    "We hope you can manage your expenses easily from our platform!"
-  );
-} catch (err) {
-  console.error("Email sending failed:", err.message);
-  // Don’t block registration just because email failed
-}
+//  try {
+//   await emailManager(
+//     createdUser.email,
+//     "Welcome to Expense Tracker PRO!",
+//     "We hope you can manage your expenses easily from our platform!"
+//   );
+// } catch (err) {
+//   console.error("Email sending failed:", err.message);
+//   // Don’t block registration just because email failed
+// }
 
   // Respond with token
   res.status(201).json({
@@ -63,4 +63,5 @@ export const register = expressAsyncHandler(async (req, res) => {
     accessToken,
   });
 });
+
 
