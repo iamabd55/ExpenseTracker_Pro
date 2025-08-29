@@ -16,8 +16,9 @@ const AddExpense = ({ token, onClose, onSuccess }) => {
 
     try {
       setSubmitting(true);
+      const API = import.meta.env.VITE_API_URL;
       await axios.post(
-        "http://localhost:5000/api/transactions/addExpense",
+        `${API}/api/transactions/addExpense`,
         { amount: Number(amount), remarks },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -72,3 +73,4 @@ const AddExpense = ({ token, onClose, onSuccess }) => {
 };
 
 export default AddExpense;
+
