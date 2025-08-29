@@ -29,8 +29,9 @@ const EditTransaction = ({ transaction, token, onClose, onTransactionUpdated }) 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      const API = import.meta.env.VITE_API_URL;
       await axios.put(
-        "/api/transactions/editTransaction",
+        `${API}/api/transactions/editTransaction`,
         formData.transaction_id,
         {
           headers: {
@@ -122,3 +123,4 @@ const EditTransaction = ({ transaction, token, onClose, onTransactionUpdated }) 
 };
 
 export default EditTransaction;
+
