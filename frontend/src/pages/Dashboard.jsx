@@ -50,7 +50,7 @@ const Dashboard = () => {
     setLoading(true);
     try {
       const API = import.meta.env.VITE_API_URL;
-      const res = await axios.get("http://localhost:5000/api/users/dashboard", {
+      const res = await axios.get(`${API}/api/users/dashboard`, {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -394,6 +394,7 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
+
 
 
 
