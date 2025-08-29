@@ -1,23 +1,26 @@
-import nodemailer from "nodemailer";
+import axios from "axios";
 
-export const emailManager = async (to, text, subject) => {
-  // Brevo SMTP transporter
-  const transport = nodemailer.createTransport({
-    host: "smtp-relay.brevo.com",
-    port: 587, // use 587 for TLS (recommended), 465 if SSL
-    auth: {
-      user: process.env.EMAIL_USER, // usually your Brevo login email
-      pass: process.env.EMAIL_PASS      // Brevo SMTP key from dashboard
-    },
-  });
+export const emailManager = async (to, subject, text) => {
+  try {
+    const res = await axios.post(
+      "https://api.brevo.com/v3/smtp/email",
+      {
+        sender: { email: process.env.EMAIL_USER, name: "Expense Tracker" },
+        to: [{ email: to }],
+        subject,
+        textContent: text,
+        htmlContent: `<p>${text}</p>`,
+      },
+      {
+        headers: {
+          "api-key": process.env.BREVO_API_KEY,   // Your Brevo API key
+          "Content-Type": "application/json",
+        },
+      }
+    );
 
-  await transport.sendMail({
-    from: '"Expense Tracker" <arehmanali000@gmail.com>', // sender info
-    to: to,
-    subject: subject,
-    text: text,
-    // you can also send HTML if needed
-    html: `<p>${text}</p>`,
-  });
+    console.log("Email sent successfully:", res.data.messageId || res.data);
+  } catch (err) {
+    console.error("Email sending failed:", err.response?.data || err.message);
+  }
 };
-
