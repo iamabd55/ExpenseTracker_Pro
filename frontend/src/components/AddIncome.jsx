@@ -16,8 +16,9 @@ const AddIncome = ({ token, onClose, onSuccess }) => {
 
     try {
       setSubmitting(true);
+      const API = import.meta.env.VITE_API_URL;
       await axios.post(
-        "http://localhost:5000/api/transactions/addIncome",
+        `${API}/api/transactions/addIncome`,
         { amount: Number(amount), remarks },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -72,3 +73,4 @@ const AddIncome = ({ token, onClose, onSuccess }) => {
 };
 
 export default AddIncome;
+
