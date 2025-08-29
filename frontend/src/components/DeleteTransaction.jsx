@@ -8,8 +8,9 @@ const DeleteTransaction = ({ transactionId, token, onClose, onSuccess }) => {
     if (!transactionId) return;
     try {
       setLoading(true);
+      const API = import.meta.env.VITE_API_URL;
       await axios.delete(
-        `http://localhost:5000/api/transactions/${transactionId}`,
+        `${API}/api/transactions/${transactionId}`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -56,3 +57,4 @@ const DeleteTransaction = ({ transactionId, token, onClose, onSuccess }) => {
 };
 
 export default DeleteTransaction;
+
