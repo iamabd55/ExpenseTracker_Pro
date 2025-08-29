@@ -149,7 +149,7 @@ const Dashboard = () => {
           <div className="mx-4 mt-6 bg-gradient-to-br from-purple-600/40 to-indigo-900/40 dark:from-purple-600/30 dark:to-indigo-900/30 
             backdrop-blur-xl p-6 rounded-2xl text-white shadow-2xl border border-purple-500/30">
             <h2 className="text-base font-medium opacity-80">Total Balance</h2>
-            <p className="text-4xl font-bold mt-2 tracking-normal text-white drop-shadow-lg">
+            <p className="text-3xl font-bold mt-2 tracking-tight text-white drop-shadow-lg md:text-4xl">
               Rs.{Number(currentBalance || 0).toFixed(2)}
             </p>
             <div className="flex justify-between mt-3 text-sm text-purple-200">
@@ -239,7 +239,7 @@ const Dashboard = () => {
                         ? "bg-green-300/20 text-green-500"
                         : "bg-red-300/20 text-red-500"
                     }`}
-                    size={28}
+                    size={24}
                   />
                   <div>
                     <p className="font-medium text-gray-800 dark:text-gray-200">
@@ -394,6 +394,7 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
+
 
 
 
